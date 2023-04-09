@@ -52,7 +52,7 @@ class GoogleOAuthCli
       raise(Error, "Attempted to open #{uri} and failed because #{exception}")
     end
 
-    credentials.code = start_server_and_receive_code(state)
+    credentials.code = Server.new(port: port, state: state).start
     fetch_and_save_token!
 
     credentials
@@ -61,14 +61,5 @@ class GoogleOAuthCli
   def fetch_and_save_token!
     credentials.fetch_access_token!
     credentials_file&.write({ refresh_token: credentials.refresh_token }.to_json)
-  end
-
-  def start_server_and_receive_code(state)
-    server = Thread.new do
-      Thread.current.report_on_exception = false
-      Server.new(port: port, state: state).start
-    end
-    server.join
-    server.value
   end
 end

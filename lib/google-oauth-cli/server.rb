@@ -24,7 +24,6 @@ class GoogleOAuthCli
           return data
         end
       end
-      server.close
     end
 
     private

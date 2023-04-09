@@ -13,12 +13,13 @@ Style/StringLiteralsInInterpolation:
 Style/Documentation:
   Enabled: false
 
-Layout/LineLength:
-  Max: 120
-
-Metrics/MethodLength:
-  Max: 30
-
 Naming/FileName:
   Exclude:
     - 'lib/google-oauth-cli.rb'
+    - 'spec/google-oauth-cli_spec.rb'
+
+Metrics/BlockLength:
+  Max: 28
+
+Metrics/MethodLength:
+  Max: 15
