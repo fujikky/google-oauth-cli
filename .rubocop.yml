@@ -1,4 +1,5 @@
 AllCops:
+  NewCops: enable
   TargetRubyVersion: 2.6
 
 Style/StringLiterals:
@@ -9,5 +10,15 @@ Style/StringLiteralsInInterpolation:
   Enabled: true
   EnforcedStyle: double_quotes
 
+Style/Documentation:
+  Enabled: false
+
 Layout/LineLength:
   Max: 120
+
+Metrics/MethodLength:
+  Max: 30
+
+Naming/FileName:
+  Exclude:
+    - 'lib/google-oauth-cli.rb'

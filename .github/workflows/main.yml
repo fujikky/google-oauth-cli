@@ -14,7 +14,8 @@ jobs:
     strategy:
       matrix:
         ruby:
-          - '3.2.0'
+          - '2.7.7'
+          - '3.2.1'
 
     steps:
     - uses: actions/checkout@v3

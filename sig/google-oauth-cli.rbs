@@ -1,0 +1,7 @@
+class GoogleOAuthCli
+  VERSION: String
+
+  def initialize(client_id: String, client_secret: String, scope: String | Array[String], credentials_file: String?, port: Integer?) -> void
+
+  def login -> Google::Auth::UserRefreshCredentials
+end
