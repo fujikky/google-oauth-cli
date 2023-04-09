@@ -2,6 +2,10 @@ name: Publish Release
 
 on:
   workflow_dispatch:
+    inputs:
+      ruby-gems-otp-code:
+        description: RubyGems OTP code
+        required: true
 
 permissions:
   contents: read
@@ -21,11 +25,15 @@ jobs:
         id: release_drafter
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - uses: release-drafter/release-drafter@v5
+        id: release_drafter_publish
+        with:
+          publish: true
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - name: bump version and publish
         run: |
-          TAG_NAME=${{ steps.release_drafter.outputs.tag_name }}
-          VERSION=${TAG_NAME#"v"}
-          sed -i "s/VERSION = .*/VERSION = \"$VERSION\"/" lib/google-oauth-cli/version.rb
+          sed -i "s/VERSION = .*/VERSION = \"${{ steps.release_drafter.outputs.tag_name }}\"/" lib/google-oauth-cli/version.rb
           bundle config unset deployment
           bundle install
           git config --global user.email "github-actions@github.com"
@@ -36,9 +44,4 @@ jobs:
           bundle exec rake release
         env:
           GEM_HOST_API_KEY: ${{ secrets.GEM_HOST_API_KEY }}
-      - uses: release-drafter/release-drafter@v5
-        id: release_drafter_publish
-        with:
-          publish: true
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GEM_HOST_OTP_CODE: ${{ github.event.inputs.ruby-gems-otp-code }}
