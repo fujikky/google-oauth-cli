@@ -13,6 +13,10 @@ jobs:
       contents: write
     steps:
       - uses: actions/checkout@v3
+      - uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: 3.2
+          bundler-cache: true
       - uses: release-drafter/release-drafter@v5
         id: release_drafter
         env:
