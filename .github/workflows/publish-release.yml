@@ -19,7 +19,7 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - name: bump version
         run: |
-          sed -i '' 's/VERSION = .*/VERSION = "${{ steps.release_drafter.outputs.tag_name }}"/' lib/google-oauth-cli/version.rb
+          sed -i 's/VERSION = .*/VERSION = "${{ steps.release_drafter.outputs.tag_name }}"/' lib/google-oauth-cli/version.rb
           git config --global user.email "github-actions@github.com"
           git config --global user.name "github-actions"
           git add .
