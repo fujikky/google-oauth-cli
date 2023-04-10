@@ -20,7 +20,7 @@ Gem::Specification.new do |spec|
   spec.metadata["rubygems_mfa_required"] = "true"
   spec.metadata["homepage_uri"] = spec.homepage
   spec.metadata["source_code_uri"] = "https://github.com/fujikky/google-oauth-cli"
-  spec.metadata["changelog_uri"] = "https://github.com/fujikky/google-oauth-cli/tree/main/CHANGELOG"
+  spec.metadata["changelog_uri"] = "https://github.com/fujikky/google-oauth-cli/releases"
 
   # Specify which files should be added to the gem when it is released.
   # The `git ls-files -z` loads the files in the RubyGem that have been added into git.
