@@ -34,7 +34,7 @@ Gem::Specification.new do |spec|
   spec.require_paths = ["lib"]
 
   # Uncomment to register a new dependency of your gem
-  spec.add_dependency "googleauth", "~> 1.5"
+  spec.add_dependency "googleauth", [">= 0.5.0", "< 2.0.0"]
   spec.add_dependency "launchy", "~> 2.5"
 
   # For more information and examples about making a new gem, check out our
