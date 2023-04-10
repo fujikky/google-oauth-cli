@@ -22,10 +22,6 @@ jobs:
           ruby-version: 3.2
           bundler-cache: true
       - uses: release-drafter/release-drafter@v5
-        id: release_drafter
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      - uses: release-drafter/release-drafter@v5
         id: release_drafter_publish
         with:
           publish: true
@@ -33,7 +29,9 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - name: bump version and publish
         run: |
-          sed -i "s/VERSION = .*/VERSION = \"${{ steps.release_drafter.outputs.tag_name }}\"/" lib/google-oauth-cli/version.rb
+          TAG_NAME=${{ steps.release_drafter.outputs.tag_name }}
+          VERSION=${TAG_NAME#"v"}
+          sed -i "s/VERSION = .*/VERSION = \"$VERSION\"/" lib/google-oauth-cli/version.rb
           bundle config unset deployment
           bundle install
           git config --global user.email "github-actions@github.com"
