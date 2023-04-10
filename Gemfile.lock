@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    google-oauth-cli (1.0.0)
+    google-oauth-cli (1.0.1)
       googleauth (>= 0.5.0, < 2.0.0)
       launchy (~> 2.5)
 
