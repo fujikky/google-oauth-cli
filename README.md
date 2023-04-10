@@ -1,6 +1,9 @@
 # google-oauth-cli
 
-google-oauth-cli is a RubyGems library that allows you to perform OAuth authentication with Google from the command-line interface (CLI).
+[![gem version](https://badge.fury.io/rb/google-oauth-cli.svg)](https://badge.fury.io/rb/google-oauth-cli)
+![test](https://github.com/fujikky/google-oauth-cli/actions/workflows/test.yml/badge.svg?branch=main)
+
+google-oauth-cli is a RubyGems library that allows you to perform OAuth authentication with Google from the CLI.
 
 ## Features
 
