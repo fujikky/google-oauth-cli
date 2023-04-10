@@ -3,17 +3,17 @@
 [![gem version](https://badge.fury.io/rb/google-oauth-cli.svg)](https://badge.fury.io/rb/google-oauth-cli)
 ![test](https://github.com/fujikky/google-oauth-cli/actions/workflows/test.yml/badge.svg?branch=main)
 
-google-oauth-cli is a RubyGems library that allows you to perform OAuth authentication with Google from the CLI.
+`google-oauth-cli` is a RubyGems library that allows you to perform OAuth authentication with Google from the CLI.
 
 ## Features
 
-- Authenticates with Google using OAuth from CLI.
-- Spins up a simple web server to receive the authorization code.
-- Supports passing a file path as an optional argument to persist the refresh token, making it easier to handle token refreshing in subsequent requests.
+- Authenticate with Google using OAuth from the CLI.
+- Start a simple web server to receive authentication codes.
+- You can persist a refresh token by passing a file path as an optional argument. If a refresh token is present, the authentication flow is skipped and the access token refresh process is performed.
 
 ## Motivation
 
-Google deprecates to the OOB flow by Google in February 2022.
+[Google deprecates to the OOB flow by Google in February 2022](https://developers.google.com/identity/protocols/oauth2/resources/oob-migration).
 
 ## Usage
 
