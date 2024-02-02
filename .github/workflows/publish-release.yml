@@ -21,7 +21,7 @@ jobs:
         with:
           ruby-version: 3.2
           bundler-cache: true
-      - uses: release-drafter/release-drafter@v5
+      - uses: release-drafter/release-drafter@v6
         id: release_drafter
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -37,7 +37,7 @@ jobs:
           git add .
           git commit -m ":bookmark: version bump"
           git push
-      - uses: release-drafter/release-drafter@v5
+      - uses: release-drafter/release-drafter@v6
         with:
           publish: true
         env:
