@@ -3,15 +3,17 @@ PATH
   specs:
     google-oauth-cli (1.0.1)
       googleauth (>= 0.5.0, < 2.0.0)
-      launchy (~> 2.5)
+      launchy (~> 3.0)
 
 GEM
   remote: https://rubygems.org/
   specs:
-    addressable (2.8.3)
-      public_suffix (>= 2.0.2, < 6.0)
+    addressable (2.9.2)
+      public_suffix (>= 2.0.2, < 8.0)
     ast (2.4.2)
     base64 (0.1.1)
+    childprocess (5.1.0)
+      logger (~> 1.5)
     diff-lcs (1.5.0)
     faraday (1.2.0)
       multipart-post (>= 1.2, < 3)
@@ -26,8 +28,11 @@ GEM
     json (2.6.3)
     jwt (2.7.0)
     language_server-protocol (3.17.0.3)
-    launchy (2.5.2)
+    launchy (3.1.1)
       addressable (~> 2.8)
+      childprocess (~> 5.0)
+      logger (~> 1.6)
+    logger (1.7.0)
     memoist (0.16.2)
     multi_json (1.15.0)
     multipart-post (2.3.0)
@@ -36,7 +41,7 @@ GEM
     parser (3.2.2.4)
       ast (~> 2.4.1)
       racc
-    public_suffix (5.0.1)
+    public_suffix (7.0.5)
     racc (1.7.1)
     rainbow (3.1.1)
     rake (13.1.0)
